@@ -1,0 +1,35 @@
+{
+  "name": "real-og",
+  "version": "0.0.1",
+  "description": "Generates og:image social card images for Markdown files based on an HTML+CSS template",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/searls/real-og.git"
+  },
+  "keywords": [
+    "og:image"
+  ],
+  "author": "Justin Searls <searls@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/searls/real-og/issues"
+  },
+  "homepage": "https://github.com/searls/real-og#readme",
+  "dependencies": {
+    "@fontsource/source-sans-pro": "^4.5.11",
+    "@resvg/resvg-js": "^2.2.0",
+    "ejs": "^3.1.8",
+    "gray-matter": "^4.0.3",
+    "satori": "^0.0.44",
+    "satori-html": "^0.3.0",
+    "sharp": "^0.31.2",
+    "showdown": "^2.1.0"
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
+  }
+}
