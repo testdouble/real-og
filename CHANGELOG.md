@@ -1,3 +1,7 @@
+# 0.0.3
+
+- Add `markdownTailwindClasses` option
+
 # 0.0.2
 
 - Add a `globals` option for having the calling function pass data to the
