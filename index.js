@@ -15,7 +15,7 @@ module.exports = async function (src, dest, options) {
     fonts: [
       {
         name: 'Source Sans Pro',
-        data: fs.readFileSync(require.resolve('@fontsource/source-sans-pro/files/source-sans-pro-all-400-normal.woff')),
+        data: fs.readFileSync(require.resolve('@fontsource/source-sans-pro/files/source-sans-pro-latin-400-normal.woff')),
         weight: 400,
         style: 'normal'
       }
