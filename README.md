@@ -9,6 +9,7 @@ help you piece together a script to do so.
 ```js
 const realOg = require('real-og')
 
+// Async function, returns a promise
 realOg('posts/my-post.md', 'img/my-post.png', {
 
   // Will be parsed as an EJS template and passed the following object:
@@ -17,6 +18,7 @@ realOg('posts/my-post.md', 'img/my-post.png', {
   //   `content.html` - Compiled HTML of the Markdown below the frontmatter
   //   `summary.markdown` - Markdown up to the `summarySeparatory`
   //   `summary.html` - Compiled HTML up to the Markdown's `summarySeparatory`
+  //   `globals.*` - Whatever you set as `globals` on this object
   template: 'template/social.html',
 
   // Optional options
@@ -25,12 +27,15 @@ realOg('posts/my-post.md', 'img/my-post.png', {
   summarySeparator: '<!--more-->', // token that separates
   width: 1200,
   height: 630,
+  globals: {
+    /* Any additional stuff you want to send to the template. */
+  }
 
   // At least one font is required by the satori package
   fonts: [
     {
       name: 'Source Sans Pro',
-      data: await fs.readFile(require.resolve('@fontsource/source-sans-pro/files/source-sans-pro-all-400-normal.woff')),
+      data: fs.readFileSync(require.resolve('@fontsource/source-sans-pro/files/source-sans-pro-all-400-normal.woff')),
       weight: 400,
       style: 'normal'
     }
