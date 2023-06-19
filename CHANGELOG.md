@@ -1,3 +1,7 @@
+# 0.0.7
+
+- Remove errant log statement
+
 # 0.0.6
 
 - Add `markdownExtensions` and `markdownStyleAttrs` options
