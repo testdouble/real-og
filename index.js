@@ -12,24 +12,25 @@ import exportImage from './lib/export-image.js'
 const __dirname = fileURLToPath(path.dirname(import.meta.url))
 const require = createRequire(import.meta.url)
 
+const DEFAULT_CONFIG = {
+  template: path.join(__dirname, 'default-template.html'),
+  width: 1200,
+  height: 630,
+  fonts: [
+    {
+      name: 'Source Sans Pro',
+      data: fs.readFileSync(require.resolve('@fontsource/source-sans-pro/files/source-sans-pro-latin-400-normal.woff')),
+      weight: 400,
+      style: 'normal'
+    }
+  ]
+}
+
 export default async function (src, dest, options) {
   log(`Writing ${dest} from ${src} markdown`)
   const page = await readMarkdown(src, { summarySeparator: '<!--more-->', ...options })
   log(`Rendering SVG for ${src}`)
-  const svg = await renderTemplate(page, {
-    template: path.join(__dirname, 'default-template.html'),
-    width: 1200,
-    height: 630,
-    fonts: [
-      {
-        name: 'Source Sans Pro',
-        data: fs.readFileSync(require.resolve('@fontsource/source-sans-pro/files/source-sans-pro-latin-400-normal.woff')),
-        weight: 400,
-        style: 'normal'
-      }
-    ],
-    ...options
-  })
+  const svg = await renderTemplate(page, Object.assign({}, DEFAULT_CONFIG, options))
   log(`Converting SVG to PNG for ${src}`)
   const png = await convertSvgToPng(svg)
   log(`Exporting image for ${src}`)
