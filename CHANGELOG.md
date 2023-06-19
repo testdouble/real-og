@@ -1,3 +1,7 @@
+# 0.0.6
+
+- Add `markdownExtensions` and `markdownStyleAttrs` options
+
 # 0.0.5
 
 - Drop `sartori-html` for much faster `html-react-parser`

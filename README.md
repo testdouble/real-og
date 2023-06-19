@@ -35,8 +35,21 @@ realOg('posts/my-post.md', 'img/my-post.png', {
     p: 'mt-0 mb-6',
     h1: 'font-size-3xl',
   },
+  // Override the style attribute for these markdown elements
+  markdownStyleAttrs: {
+    p: 'text-overflow: ellipsis',
+  },
   // Remove these tags since Satori can't really handle inline text elements
-  markdownUnwrapElements: ['a', 'em']
+  markdownUnwrapElements: ['a', 'em'],
+  // Custom extensions for showdown's markdown processing.
+  // See: https://github.com/showdownjs/showdown/wiki/Extensions
+  markdownExtensions: [
+    {
+      type: 'output',
+      regex: new RegExp(`<li([^>]*)>([^<]*)<\\/li>`, 'g'),
+      replace: '<li$1>• $2</li>'
+    }
+  ],
 
 
   // At least one font is required by the satori package
