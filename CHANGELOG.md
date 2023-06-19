@@ -1,3 +1,8 @@
+# 0.0.4
+
+- Add `markdownUnwrapElements` option
+- Convert package to native ES module
+
 # 0.0.3
 
 - Add `markdownTailwindClasses` option
