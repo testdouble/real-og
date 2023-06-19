@@ -1,3 +1,7 @@
+# 0.0.5
+
+- Drop `sartori-html` for much faster `html-react-parser`
+
 # 0.0.4
 
 - Add `markdownUnwrapElements` option
