@@ -1,13 +1,18 @@
-const path = require('path')
-const fs = require('fs')
+import path from 'path'
+import fs from 'fs'
+import { createRequire } from 'node:module'
+import { fileURLToPath } from 'url'
 
-const log = require('./lib/log')
-const readMarkdown = require('./lib/read-markdown')
-const renderTemplate = require('./lib/render-template')
-const convertSvgToPng = require('./lib/convert-svg-to-png')
-const exportImage = require('./lib/export-image')
+import log from './lib/log.js'
+import readMarkdown from './lib/read-markdown.js'
+import renderTemplate from './lib/render-template.js'
+import convertSvgToPng from './lib/convert-svg-to-png.js'
+import exportImage from './lib/export-image.js'
 
-module.exports = async function (src, dest, options) {
+const __dirname = fileURLToPath(path.dirname(import.meta.url))
+const require = createRequire(import.meta.url)
+
+export default async function (src, dest, options) {
   log(`Writing ${dest} from ${src} markdown`)
   const page = await readMarkdown(src, { summarySeparator: '<!--more-->', ...options })
   log(`Rendering SVG for ${src}`)
