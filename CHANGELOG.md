@@ -2,6 +2,8 @@
 
 - Add `markdownUnwrapElements` option
 - Convert package to native ES module
+- Will print debug statements to STDOUT if `DEBUG` env var is toggled
+- Returns the destination image path instead of `undefined`
 
 # 0.0.3
 
