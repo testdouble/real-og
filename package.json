@@ -1,6 +1,6 @@
 {
   "name": "real-og",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Generates og:image social card images for Markdown files based on an HTML+CSS template",
   "type": "module",
   "main": "index.js",
