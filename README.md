@@ -35,6 +35,8 @@ realOg('posts/my-post.md', 'img/my-post.png', {
     p: 'mt-0 mb-6',
     h1: 'font-size-3xl',
   },
+  // Remove these tags since Satori can't really handle inline text elements
+  markdownUnwrapElements: ['a', 'em']
 
 
   // At least one font is required by the satori package
