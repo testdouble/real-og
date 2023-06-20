@@ -1,3 +1,7 @@
+# 0.0.8
+
+- Add undocumented `measureHeight` function. YMMV
+
 # 0.0.7
 
 - Remove errant log statement
